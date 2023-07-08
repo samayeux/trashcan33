@@ -1,4 +1,7 @@
-$computerList =(Get-ADComputer -Filter {(OperatingSystem -like "*Windows*") -and (Name -notlike "*dc*") -and (Name -notlike "*wac*")} | Select-Object -ExpandProperty Name)
+<# Script that gets a list of windows machines in current domain and checks for certain patching updates,
+prints them on the screen and then adds them to a results.txt into the folder the script is being run from #>
+
+$computerList =(Get-ADComputer -Filter {(OperatingSystem -like "*Windows*")} | Select-Object -ExpandProperty Name)
 $sourcePath =(Split-Path -Path $MyInvocation.MyCommand.Path -Parent)
 $date = get-date -format "yyyyMMdd-HHmmss"
 $outputFile = "C:\Users\Public\Documents\Results-$date.txt"
