@@ -1,3 +1,4 @@
+<# THIS SCRIPT IS A WORK IN PROGRESS #>
 <#step 1: stage all files in 1 location in enclave including script,
 #typically the following:
  1. windows kb.msu 
@@ -5,6 +6,8 @@
  3. edge update.
  4. nessus agent
  #>
+
+
 
 # Variables
 # File source path; basically run this script and it will start naming stuff based on its location. 
